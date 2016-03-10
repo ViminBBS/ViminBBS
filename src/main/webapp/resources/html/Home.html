@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>IMatch</title>
+    <link href="../css/Home.css" rel="stylesheet" />
+    <script src="../js/jquery-1.12.0.js"></script>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        var j = 1;
+        function slideNext() {
+            $("#" + j).attr("hidden","hidden");
+            j++;
+            if (j > 5)
+                j = 1;
+            $("#" + j).removeAttr("hidden");
+        }
+        function slidePre() {
+            $("#" + j).slideUp();
+            j--;
+            if (j < 1)
+                j = 5;
+            $("#" + j).slideDown();
+        }
+    </script>
+</head>
+<body>
+    <section style="position:relative;">
+        <a href="#" style="float:right" onclick="slideNext(); return false;">下一张</a>
+        <a href="#" onclick="slidePre(); return false;">上一张</a>
+        <img class="pic" src="../imgs/43b1OOOPIC57.jpg" alt="1" id="1" />
+        <img class="pic" src="../imgs/u=2088881966,4223130793&fm=21&gp=0.jpg" alt="2" id="2" hidden="hidden" />
+        <img class="pic" src="../imgs/u=3303992133,3208352813&fm=21&gp=0.jpg" alt="3" id="3" hidden="hidden" />
+        <img class="pic" src="../imgs/u=3995594144,3504136179&fm=21&gp=0.jpg" alt="4" id="4" hidden="hidden" />
+        <img class="pic" src="../imgs/u=4252086371,1041483128&fm=21&gp=0.jpg" alt="5" id="5" hidden="hidden" />
+    </section>
+</body>
+</html>

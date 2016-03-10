@@ -1,0 +1,225 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            max-width: 800px;
+            padding: 19px 29px 29px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        }
+
+            .form-signin .form-signin-heading,
+            .form-signin .checkbox {
+                margin-bottom: 10px;
+            }
+
+            .form-signin input[type="text"],
+            .form-signin input[type="password"] {
+                font-size: 16px;
+                height: auto;
+                margin-bottom: 15px;
+                padding: 7px 9px;
+            }
+        /* Sticky footer styles
+        -------------------------------------------------- */
+
+        html,
+        body {
+            height: 100%;
+            /* The html and body elements cannot have any padding or margin. */
+        }
+
+        /* Wrapper for page content to push down footer */
+        #wrap {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            /* Negative indent footer by it's height */
+            margin: 0 auto -60px;
+        }
+
+        /* Set the fixed height of the footer here */
+        #push,
+        #footer {
+            height: 60px;
+        }
+
+        #footer {
+            background-color: #f5f5f5;
+        }
+
+        /* Lastly, apply responsive CSS fixes as necessary */
+        @media (max-width: 767px) {
+            #footer {
+                margin-left: -20px;
+                margin-right: -20px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+
+
+        /* Custom page CSS
+        -------------------------------------------------- */
+        /* Not required for template or sticky footer method. */
+
+        .container {
+            width: auto;
+            max-width: 680px;
+        }
+
+            .container .credit {
+                margin: 20px 0;
+            }
+    </style>
+    <script src="../js/Util.js"></script>
+    <script src="../js/Register.js"></script>
+    <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- model code-->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">本站须知</h3>
+        </div>
+        <div class="modal-body">
+            <p>1. 不得发布非法暴力色情信息</p>
+            <p>2. 不得非法转载侵犯他人版权的信息</p>
+            <p>3. 本站文章均为个人所有，转载请注明出处</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal">拒绝</button>
+            <button class="btn btn-primary" onclick="$('#register').submit();">同意</button>
+        </div>
+    </div>
+    <!-- end model code-->
+    <!-- tooltip code-->
+    <!-- end tooltip code-->
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <!-- Part 1: Wrap all page content here -->
+    <div id="wrap">
+        <!-- Begin page content -->
+        <div class="container">
+            <div class="page-header">
+                <h1>欢迎来带微米BBS</h1>
+            </div>
+            <form class="form-horizontal form-signin" id="register" method="post">
+                <div class="control-group">
+                    <label class="control-label" for="inputUserId">输入您的登录名：</label>
+                    <div class="controls">
+                        <input type="text" name="UserId" id="inputUserId" placeholder="请输入用户名" data-toggle="tooltip" data-placement="bottom" data-trigger="manual" /> <span class="icon-asterisk"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPwd">输入您的密码：</label>
+                    <div class="controls">
+                        <input type="password" name="pwd" id="inputPwd" placeholder="请输入密码" /> <span class="icon-asterisk"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPwd">再次输入您的密码：</label>
+                    <div class="controls">
+                        <input type="password" name="repwd" onkeyup="validePwd();" id="inputRePwd" placeholder="请输入密码" data-toggle="tooltip" data-placement="bottom" data-trigger="manual" title="两次密码不一致" /> <span class="icon-asterisk"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputNickName">输入您的昵称：</label>
+                    <div class="controls">
+                        <input type="text" name="nickname" id="inputNickName" placeholder="请输入昵称" data-toggle="tooltip" data-placement="bottom" data-trigger="manual" /> <span class="icon-asterisk"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputAge">输入您的年龄：</label>
+                    <div class="controls">
+                        <input type="text" name="age" id="inputAge" placeholder="请输入年龄" data-trigger="manual" data-toggle="tooltip" data-placement="bottom" /> <span class="icon-asterisk"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputSex">选择您的性别：</label>
+                    <div class="controls">
+                        <label class="radio inline">
+                            <input type="radio" name="sex" /> 男 <span class="icon-asterisk"></span>
+                        </label>
+                        <label class="radio inline">
+                            <input type="radio" name="sex" id="inputSex" data-toggle="tooltip" data-trigger="manual" data-placement="top" /> 女 <span class="icon-asterisk"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">请输入您的Email：</label>
+                    <div class="controls">
+                        <input type="text" name="email" id="inputEmail" placeholder="输入您的Email" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" /><span class="icon-asterisk"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputBirthday">请输入您的生日：</label>
+                    <div class="controls">
+                        <input type="text" class="input-small" placeholder="年XXXX" id="inputYear" data-trigger="manual" title="请填入1900到2050的数字" data-toggle="tooltip" data-placement="bottom" /> <span class="icon-asterisk"></span>
+                        <input type="text" class="input-small" placeholder="月XX" id="inputMonth" data-trigger="manual" title="请填入1到12的数字" data-toggle="tooltip" data-placement="bottom" /> <span class="icon-asterisk"></span>
+                        <input type="text" class="input-small" placeholder="日XX" id="inputDay" data-trigger="manual" title="请填入1到31的数字" data-toggle="tooltip" data-placement="bottom" /> <span class="icon-asterisk"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-large btn-primary" onclick="validate(); return false;">注册</button>
+                        <button type="reset" class="btn btn-large">重新填写</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="push"></div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">Personal web site by <a href="#">Vimin</a> and <a href="#">Wei</a>.</p>
+        </div>
+    </div>
+    <!-- End of content-->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+    </script>
+</body>
+</html>

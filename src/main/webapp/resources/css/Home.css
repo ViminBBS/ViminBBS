@@ -1,0 +1,12 @@
+﻿body {
+}
+
+.pic{
+    width:800px;
+    height:300px;
+}
+
+.arrow{
+    position:absolute;
+    margin-top:130px;
+}
